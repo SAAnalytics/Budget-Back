@@ -1,4 +1,3 @@
-var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
@@ -36,9 +35,6 @@ app.get('/',(req,res)=>res.send('Backend App'))
 app.use("/expensetracker/api/auth", router);
 app.use("/expensetracker/api/budget", Authenticate, Budget);
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
-});
 
 // error handler
 app.use(function(err, req, res, next) {
